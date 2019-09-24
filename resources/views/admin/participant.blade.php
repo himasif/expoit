@@ -24,6 +24,9 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No HP</th>
+                            <th>Bukti</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,6 +37,11 @@
             </div>
         </div>
     </div>
+
+    <form action="{{ url('/admin/accept-payment') }}" method="post" id="form-accept">
+        @csrf
+        <input type="hidden" name="participant_id" id="participant-id">
+    </form>
 @endsection
 
 @section('js')
@@ -46,8 +54,16 @@
                 {name:'no', data:'no'},
                 {name:'name', data:'name'},
                 {name:'email', data:'email'},
-                {name:'phone', data:'phone'}
+                {name:'phone', data:'phone'},
+                {name:'bukti', data:'bukti'},
+                {name:'status', data:'status'},
+                {name:'action', data:'action'},
             ]
         });
+
+        function acceptPayment(id) {
+            $('#participant-id').val(id);
+            $('#form-accept').submit();
+        }
     </script>
 @endsection

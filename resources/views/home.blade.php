@@ -35,13 +35,6 @@ CSS
 
 <body>
 
-<!-- Preloader -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
-
 <!-- Start header section -->
 <header class="header-area" id="header-area">
     <div class="dope-nav-container breakpoint-off">
@@ -459,6 +452,27 @@ CSS
     </div>
 </section>
 <!-- End download section -->
+
+<section class="about-section section-gap-half relative" id="about-semnas-section">
+    <div class="container">
+        <form action="{{ url('/upload') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="row contact-form-wrap align-items-center">
+                <div class="col-md-12 form-title">
+                    <h3>Upload Bukti Transfer</h3>
+                    <p>Silahkan upload bukti transfer dan kode verifikasi dari email</p>
+                </div>
+                <label for="code">Kode Pembayaran</label>
+                <input type="text" name="code" class="form-control" id="code" required>
+                <hr>
+                <label for="file">File bukti transfer</label>
+                <input type="file" class="form-control" name="file" id="file" required>
+                <input type="submit" class="btn primary-btn" value="Submit">
+                <div id="msg" class="message"></div>
+            </div>
+        </form>
+    </div>
+</section>
 
 <!-- Start footer section -->
 <footer class="footer-section section-gap-half">
