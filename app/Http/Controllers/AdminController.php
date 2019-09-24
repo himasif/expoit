@@ -57,7 +57,7 @@ class AdminController extends Controller
                     return "Belum Upload Bukti";
                 }
                 return '
-                    <a href="' . url('/storage/' . $q->file) . '" class="btn btn-success">Bukti</a>
+                    <a href="' . url('/storage/' . $q->file) . '" class="btn btn-success" target="_blank">Bukti</a>
                 ';
             })
             ->addColumn('status', function ($q) {
