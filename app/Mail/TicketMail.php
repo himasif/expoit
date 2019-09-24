@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TicketMail extends Mailable
 {
@@ -32,8 +34,10 @@ class TicketMail extends Mailable
     {
         $name = $this->name;
         $code = $this->code;
+        Storage::disk('public')->put('/qr-code/' . $code . '.png', QrCode::format('png')->size(400)->generate($code));
+        $url = "qr-code/$code.png";
         return $this->view('emails.ticket')
             ->subject('Tiket Expo IT 2019')
-            ->with(compact('name', 'code'));
+            ->with(compact('name', 'code', 'url'));
     }
 }

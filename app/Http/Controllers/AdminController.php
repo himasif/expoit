@@ -41,7 +41,6 @@ class AdminController extends Controller
             'status' => 3,
         ]);
 
-        return new TicketMail($participant->name, $register_code);
         Mail::to($participant->email)->send(new TicketMail($participant->name, $register_code));
         return redirect()->back();
     }

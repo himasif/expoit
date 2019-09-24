@@ -18,6 +18,6 @@
     </table>
 
     <div style="text-align: center">
-        {!! QrCode::size(400)->generate($code); !!}
+        <img src="{{ url('storage/' . $url) }}">
     </div>
 @endsection
