@@ -2,27 +2,16 @@
 <html lang="zxx" class="no-js">
 
 <head>
-    <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('img/fav.png') }}">
-    <!-- Author Meta -->
     <meta name="author" content="">
-    <!-- Meta Description -->
     <meta name="description" content="">
-    <!-- Meta Keyword -->
     <meta name="keywords" content="">
-    <!-- meta character set -->
     <meta charset="UTF-8">
-    <!-- Site Title -->
     <title>EXPO IT - Fakultas Ilmu Komputer, Universitas Jember</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
     @toastr_css
-
-    <!--
-CSS
-============================================= -->
 
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -85,6 +74,9 @@ CSS
                                 </li>
                                 <li>
                                     <a href="#download-section">Registration</a>
+                                </li>
+                                <li>
+                                    <a href="#upload-bukti">Upload Bukti</a>
                                 </li>
                             </ul>
 
@@ -336,28 +328,23 @@ CSS
             <div class="col-lg-7">
                 <dl class="accordion">
                     <dt>
-                        <a href="#" class="active">Started several mistake joy say painful removed reached end.</a>
+                        <a href="#" class="active">Bagaimana cara membayar tiket masuk EXPO IT 2019?</a>
                     </dt>
                     <dd>
-                        Far curiosity incommode now led smallness allowance. Favour bed assure son things yet. She
-                        consisted consulted elsewhere happiness disposing household any old the. Widow downs you
-                        new shade drift hopes small. So otherwise commanded sweetness we improving.
+                        Silahkan Anda mendaftar terlebih dahulu melalui form pendaftaran peserta pada form dibawah ini. Setelah itu Anda akan mendapatakan email berupa informasi pembayaran tiket expo, pembayaran dapat dilakukan melalui transfer atm ke rekening panitia yang telah dicantumkan pada email atau dapat secara offline pada stand panitia di Fakultas Ilmu Komputer.  <br>
+                        Jika Anda melakukan pembayaran via transfer atm, Anda dapat mengupload bukti transfer Anda pada form yang telah disediakan pada website EXPO IT 2019 sedangkan jika Anda membayar secara offline, Panitia akan memverifikasi pembayaran Anda setelah Anda melakukan pembayaran pada stand
                     </dd>
                     <dt>
-                        <a href="#">Although moreover mistaken kindness me feelings do be marianne?</a>
+                        <a href="#">Apa yang harus dibawa pada hari h acara?</a>
                     </dt>
                     <dd>
-                        Far curiosity incommode now led smallness allowance. Favour bed assure son things yet. She
-                        consisted consulted elsewhere happiness disposing household any old the. Widow downs you
-                        new shade drift hopes small. So otherwise commanded sweetness we improving.
+                        Tidak ada kewajiban apa - apa untuk harus membawa apa, namun jangan lupa untuk membawa tiket elektronik yang telah dikirimkan melalui email setelah pembayaran Anda dinyatakan sesuai, karena tiket elektronik tersebut akan di tukar dengan stiker dan sebagai bukti tanda masuk peserta.
                     </dd>
                     <dt>
-                        <a href="#">By in no ecstatic wondered disposal my speaking?</a>
+                        <a href="#">Berapa harga tiket EXPO IT 2019?</a>
                     </dt>
                     <dd>
-                        Far curiosity incommode now led smallness allowance. Favour bed assure son things yet. She
-                        consisted consulted elsewhere happiness disposing household any old the. Widow downs you
-                        new shade drift hopes small. So otherwise commanded sweetness we improving.
+                        Untuk presale 1 sebesar 25000 dan presale 2/OTS sebesar 20000
                     </dd>
                 </dl>
             </div>
@@ -453,7 +440,7 @@ CSS
 </section>
 <!-- End download section -->
 
-<section class="about-section section-gap-half relative" id="about-semnas-section">
+<section class="about-section section-gap-half relative" id="upload-bukti">
     <div class="container">
         <form action="{{ url('/upload') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -480,48 +467,36 @@ CSS
         <div class="row align-items-center">
             <div class="col-lg-5 footer-left">
                 <a href="#">
-                    <img src="{{ asset('img/logo-w.png') }}" alt="">
+                    <img src="{{ asset('img/logo/logo2.png') }}" alt="" width="50%">
                 </a>
-                <p class="copyright-text">&copy; 2018 Design With
-                    <i class="fa fa-heart" aria-hidden="true"></i> By
-                    <a href="http://dopetheme.com" target="_blank">Dope Theme</a>
+                <p class="copyright-text">&copy; 2019 Designed
+                    By
+                    <a href="http://himasif.ilkom.unej.ac.id" target="_blank">Mediatek Himasif</a>
                 </p>
             </div>
             <div class="col-lg-7">
                 <ul id="social">
                     <li>
-                        <a target="_blank" href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="#">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="#">
+                        <a target="_blank" href="https://www.instagram.com/expoitpssi/">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
                 <ul class="footer-menu">
                     <li>
-                        <a href="#">Affiliate Program</a>
+                        <a href="#about-expo-section">About</a>
                     </li>
                     <li>
-                        <a href="#">Terms & Conditionss</a>
+                        <a href="#feature-section">Announcement</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="#faq-section">FAQ</a>
                     </li>
                     <li>
-                        <a href="#">Refund Policy</a>
+                        <a href="#download-section">Registration</a>
+                    </li>
+                    <li>
+                        <a href="#upload-bukti">Upload Bukti</a>
                     </li>
                 </ul>
             </div>
