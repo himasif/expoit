@@ -317,12 +317,12 @@
             <div class="faq-left col-lg-4">
                 <h2>Frequently Asked Question</h2>
                 <p>
-                    Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorperi.
+                    Pertanyaan yang umum bisa dilihat disini
                 </p>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est voluptatibus, tempora odio dicta
-                    molestiae recusandae delectus perferendis eveniet aspernatur voluptatum earum dolore
-                    necessitatibus odit perspiciatis eos, quidem soluta autem esse.
+                    Atau hubungi CP : <br>
+                    Puput : 085211812723 <br>
+                    Arum : 082340362190
                 </p>
             </div>
             <div class="col-lg-7">

@@ -34,5 +34,11 @@
     <p>
         <b>Note : Kode Pembayaran digunakan untuk mengupload bukti transfer ke <a href="{{ url('/') }}">disini</a></b>
     </p>
+    <hr>
+    <p>
+        Atau pembayaran bisa menghubungi CP yang tertera : <br>
+        Puput : 085211812723 <br>
+        Arum : 082340362190 <br>
+    </p>
     <p>Terima kasih telah mendaftar Expo IT 2019</p>
 @endsection
