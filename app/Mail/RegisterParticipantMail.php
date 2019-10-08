@@ -31,10 +31,10 @@ class RegisterParticipantMail extends Mailable
     public function build()
     {
         $name = $this->name;
-        $jumlah = 25000;
+        $jumlah = 40000;
         $bank = "BNI";
-        $no_rek = "0714518818";
-        $atas_nama = "Rara Putri Ayu Nada Damayanti";
+        $no_rek = "0558647850";
+        $atas_nama = "Tiara Amalinda";
         $code = $this->code;
         return $this->view('emails.register-mail')
             ->with(compact('name', 'code', 'jumlah', 'bank', 'no_rek', 'atas_nama'));

@@ -104,7 +104,7 @@
                 <a class="video-btn primary-btn" href="#about-expo-section">About More</a>
             </div>
             <div class="col-md-6 banner-right text-center">
-                <img class="img-fluid" src="{{ asset('img/screen1.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/screen1.png') }}" style="max-width: 50%" alt="">
             </div>
         </div>
     </div>
@@ -290,7 +290,10 @@
                             <div class="overlay overlay-bg"></div>
                             <h3>Tanggal Acara</h3>
                             <p>
-                                Minggu, 27 Oktober 2019 <br>Pukul 07:00 WIB - Selesai
+                                Tanggal acara <br>
+				Minggu, 27 oktober 2019 <br>
+				Next Career dan expo : 07.30 <br>
+				Seminar Nasional : 08.00 <br>
                             </p>
                         </div>
                     </div>
@@ -299,7 +302,7 @@
                             <div class="overlay overlay-bg"></div>
                             <h3>Fasilitas</h3>
                             <p>
-                                WiFi, ilmu yang bermanfaat, panitia seksi
+				Seminar Kit, Berbagai voucher, Ilmu baru, Konsumsi, Snack, Sertifikat, free pass expo dan next career
                             </p>
                         </div>
                     </div>
@@ -344,7 +347,10 @@
                         <a href="#">Berapa harga tiket EXPO IT 2019?</a>
                     </dt>
                     <dd>
-                        Untuk presale 1 sebesar 25000 dan presale 2/OTS sebesar 20000
+			Harga tiket expo dibagi menjadi 3 : <br>
+			Untuk presale 1 sebesar Rp 30.000 <br>
+			Untuk presale 2 sebesar Rp 40.000 <br>
+			dan Untuk OTS sebesar Rp 50.000
                     </dd>
                 </dl>
             </div>

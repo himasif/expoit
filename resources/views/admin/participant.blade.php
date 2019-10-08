@@ -26,6 +26,7 @@
                             <th>No HP</th>
                             <th>Bukti</th>
                             <th>Status</th>
+			    <th>Tanggal</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -37,6 +38,11 @@
             </div>
         </div>
     </div>
+
+    <form action="{{ url('/admin/delete-participant') }}" method="post" id="delete-participant-form">
+        @csrf
+        <input type="hidden" id="delete-participant-id" name="participant_id">
+    </form>
 
     <form action="{{ url('/admin/accept-payment') }}" method="post" id="form-accept">
         @csrf
@@ -57,6 +63,7 @@
                 {name:'phone', data:'phone'},
                 {name:'bukti', data:'bukti'},
                 {name:'status', data:'status'},
+		{name: 'tanggal', data: 'tanggal'},
                 {name:'action', data:'action'},
             ]
         });
@@ -64,6 +71,11 @@
         function acceptPayment(id) {
             $('#participant-id').val(id);
             $('#form-accept').submit();
+        }
+
+	function deleteParticipant(id) {
+            $('#delete-participant-id').val(id);
+            $('#delete-participant-form').submit();
         }
     </script>
 @endsection

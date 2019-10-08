@@ -12,6 +12,9 @@ use Illuminate\Support\Str;
 class RegistrantController extends Controller
 {
     public function registerParticipant(Request $request){
+
+//	toastr()->warning("Maaf Presale 1 Sudah ditutup, silahkan tunggu presale 2");
+//	return redirect()->back();
         $this->validate($request, [
             'name' => 'required|min:3|max:191',
             'email' => 'required|email',

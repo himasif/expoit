@@ -60,6 +60,9 @@ class AdminController extends Controller
                     <a href="' . url('/storage/' . $q->file) . '" class="btn btn-success" target="_blank">Bukti</a>
                 ';
             })
+	    ->addColumn('tanggal', function ($q) {
+		return $q->created_at->format('d/M/Y');
+	    })
             ->addColumn('status', function ($q) {
                 if ($q->status == 1) {
                     return "Belum Dibayar";
@@ -76,6 +79,7 @@ class AdminController extends Controller
                 else {
                     return '
                     <button onclick="acceptPayment(\''. $q->id .'\')" class="btn btn-success">Terima</button>
+		    <button onclick="deleteParticipant(\''. $q->id .'\')" class="btn btn-danger">Hapus</button>
                 ';
                 }
             })
@@ -91,5 +95,11 @@ class AdminController extends Controller
         }
         return DataTables::of($data)
             ->make(true);
+    }
+
+    public function deleteParticipant(Request $request){
+        $participant = Registrant::findOrFail($request->participant_id)->delete();
+        toastr()->success("Peserta Berhasil Dihapus");
+        return redirect()->back();
     }
 }
