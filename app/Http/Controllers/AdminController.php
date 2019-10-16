@@ -33,7 +33,8 @@ class AdminController extends Controller
         return view('admin.company');
     }
 
-    public function acceptPayment(Request $request){
+    public function acceptPayment(Request $request)
+    {
         $participant = Registrant::findOrFail($request->participant_id);
         $register_code = Str::random(8);
         $participant->update([
@@ -60,9 +61,9 @@ class AdminController extends Controller
                     <a href="' . url('/storage/' . $q->file) . '" class="btn btn-success" target="_blank">Bukti</a>
                 ';
             })
-	    ->addColumn('tanggal', function ($q) {
-		return $q->created_at->format('d/M/Y');
-	    })
+            ->addColumn('tanggal', function ($q) {
+                return $q->created_at->format('d/M/Y');
+            })
             ->addColumn('status', function ($q) {
                 if ($q->status == 1) {
                     return "Belum Dibayar";
@@ -73,15 +74,17 @@ class AdminController extends Controller
                 }
             })
             ->addColumn('action', function ($q) {
-                if($q->status == 3){
-                    return $q->register_code;
-                }
-                else {
+                if ($q->status == 3) {
+                    return $q->register_code . "<br> <button onclick=\"resendCode($q->id)\" class=\"btn btn-primary\">Kirim Ulang</button>";
+                } else {
                     return '
-                    <button onclick="acceptPayment(\''. $q->id .'\')" class="btn btn-success">Terima</button>
-		    <button onclick="deleteParticipant(\''. $q->id .'\')" class="btn btn-danger">Hapus</button>
+                    <button onclick="acceptPayment(\'' . $q->id . '\')" class="btn btn-success">Terima</button>
+		    <button onclick="deleteParticipant(\'' . $q->id . '\')" class="btn btn-danger">Hapus</button>
                 ';
                 }
+            })
+            ->addColumn('dikonfirmasi', function($q){
+                return $q->updated_at->format('d/M/Y');
             })
             ->rawColumns(['bukti', 'action'])
             ->make(true);
@@ -97,9 +100,18 @@ class AdminController extends Controller
             ->make(true);
     }
 
-    public function deleteParticipant(Request $request){
+    public function deleteParticipant(Request $request)
+    {
         $participant = Registrant::findOrFail($request->participant_id)->delete();
         toastr()->success("Peserta Berhasil Dihapus");
+        return redirect()->back();
+    }
+
+    public function resendCode(Request $request)
+    {
+        $participant = Registrant::findOrFail($request->participant_id);
+        Mail::to($participant->email)->send(new TicketMail($participant->name, $participant->register_code));
+        toastr()->success("Berhasil mengirim ulang");
         return redirect()->back();
     }
 }

@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
     Route::get('/participant', 'AdminController@expoParticipant');
     Route::post('/accept-payment', 'AdminController@acceptPayment');
     Route::post('/delete-participant', 'AdminController@deleteParticipant');
+    Route::post('/resend', 'AdminController@resendCode');
 
     Route::get('/ajax/participant', 'AdminController@getAjaxParticipant');
     Route::get('/ajax/company', 'AdminController@getAjaxCompany');

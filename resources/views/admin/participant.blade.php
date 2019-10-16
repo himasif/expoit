@@ -26,7 +26,8 @@
                             <th>No HP</th>
                             <th>Bukti</th>
                             <th>Status</th>
-			    <th>Tanggal</th>
+                            <th>Daftar</th>
+                            <th>Dikonfirmasi</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -48,6 +49,11 @@
         @csrf
         <input type="hidden" name="participant_id" id="participant-id">
     </form>
+
+    <form action="{{ url('/admin/resend') }}" method="post" id="resend-form">
+        @csrf
+        <input type="hidden" name="participant_id" id="resend-participant-id">
+    </form>
 @endsection
 
 @section('js')
@@ -57,14 +63,15 @@
             serverSide: true,
             ajax: '/admin/ajax/participant',
             columns: [
-                {name:'no', data:'no'},
-                {name:'name', data:'name'},
-                {name:'email', data:'email'},
-                {name:'phone', data:'phone'},
-                {name:'bukti', data:'bukti'},
-                {name:'status', data:'status'},
-		{name: 'tanggal', data: 'tanggal'},
-                {name:'action', data:'action'},
+                {name: 'no', data: 'no'},
+                {name: 'name', data: 'name'},
+                {name: 'email', data: 'email'},
+                {name: 'phone', data: 'phone'},
+                {name: 'bukti', data: 'bukti'},
+                {name: 'status', data: 'status'},
+                {name: 'tanggal', data: 'tanggal'},
+                {name: 'dikonfirmasi', data: 'dikonfirmasi'},
+                {name: 'action', data: 'action'},
             ]
         });
 
@@ -73,9 +80,14 @@
             $('#form-accept').submit();
         }
 
-	function deleteParticipant(id) {
+        function deleteParticipant(id) {
             $('#delete-participant-id').val(id);
             $('#delete-participant-form').submit();
+        }
+
+        function resendCode(id){
+            $('#resend-participant-id').val(id);
+            $('#resend-form').submit();
         }
     </script>
 @endsection
