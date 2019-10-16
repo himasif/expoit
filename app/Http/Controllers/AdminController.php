@@ -22,7 +22,7 @@ class AdminController extends Controller
         $participant_paid = Registrant::whereNull('company')->whereNull('verify_code')->count();
         $participant_verified = Registrant::whereNull('company')->whereNotNull('register_code')->count();
         $company = Registrant::WhereNotNull('company')->count();
-        return view('admin.dashboard', compact('participant', 'company'));
+        return view('admin.dashboard', compact('participant', 'company', 'participant_paid', 'participant_verified'));
     }
 
     public function expoParticipant()
