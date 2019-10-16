@@ -32,6 +32,18 @@
                 highlight: "#F7464A",
                 label: 'Perusahaan'
             },
+            {
+                value: {{ $participant_paid }},
+                color: "#333",
+                highlight: "#333",
+                label: 'Sudah Membayar'
+            },
+            {
+                value: {{ $participant_verified }},
+                color: "#61ed6b",
+                highlight: "#61ed6b",
+                label: 'Sudah Terverifikasi'
+            },
 
         ]
         var ctxp = $("#peserta-chart").get(0).getContext("2d");
